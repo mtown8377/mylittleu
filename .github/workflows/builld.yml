@@ -13,13 +13,5 @@ jobs:
     - name: Build the Docker image
       run: docker build . -t johnstok815/mylittleu:latest
 
-    - name: Log into Docker Hub
-      uses: docker/login-action@v2
-      with:
-        username: johnstok815
-        password: ${{ secrets.DOCKER_HUB_TOKEN }}
-
-    - name: Push the image to Docker Hub
-      run: docker push johnstok815/mylittleu
 
 
