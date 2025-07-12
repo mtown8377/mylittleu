@@ -22,3 +22,14 @@ jobs:
     - name: Push the image to Docker Hubb
       run: docker push johnstok815/mylittleu
 
+    - name: Pull the image to VM
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: 
+          docker pull johnstok815/mylittleu:latest
+          docker stop mylittleu || true
+          docker rm mylittleu || true
+          docker run -d -p 80:8081 --name mylittleu johnstok815/mylittleu:latest
