@@ -11,7 +11,6 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Build the Docker image
-      working-directory: Dockerized/mylittleu
       run: docker build . -t johnstok815/mylittleu:latest
 
     - name: Log into Docker Hub
