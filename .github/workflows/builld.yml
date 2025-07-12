@@ -29,7 +29,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          docker pull johnstok815/mylittleu:latest
-          docker stop mylittleu || true
-          docker rm mylittleu || true
-          docker run -d -p 80:8081 --name mylittleu johnstok815/mylittleu:latest
+          sudo docker pull johnstok815/mylittleu:latest
+          sudo docker stop mylittleu || true
+          sudo docker rm mylittleu || true
+          sudo docker run -d -p 80:8081 --name mylittleu johnstok815/mylittleu:latest
