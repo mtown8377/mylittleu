@@ -19,6 +19,6 @@ jobs:
         username: johnstok815
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
-    - name: Push the image to Docker Hub
+    - name: Push the image to Docker Hubb
       run: docker push johnstok815/mylittleu
 
