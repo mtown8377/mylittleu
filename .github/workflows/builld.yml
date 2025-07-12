@@ -28,7 +28,7 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
-        script: 
+        script: |
           docker pull johnstok815/mylittleu:latest
           docker stop mylittleu || true
           docker rm mylittleu || true
